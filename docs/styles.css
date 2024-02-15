@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Color de fondo gris claro */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #fff; /* Color de fondo blanco */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+h1 {
+    text-align: center;
+    color: #333; /* Color de texto negro */
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333; /* Color de texto negro */
+}
+
+input[type="text"],
+input[type="password"],
+button {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 3px;
+}
+
+button {
+    background-color: #333; /* Color de fondo negro */
+    color: #fff; /* Color de texto blanco */
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555; /* Color de fondo negro más oscuro al pasar el ratón */
+}
