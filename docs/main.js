@@ -1,40 +1,35 @@
-var imagenes = ['img/img1.jpg','img/img2.jpg','img/img3.jpg','img/img4.jpg'],
-    cont = 0; 
-
-function carrousel(contenedor){
-    contenedor.addEventListener('click', e => {
-        let atras = contenedor.querySelector('.atras'),
-            adelante = contenedor.querySelector('.adelante'),
-            img = contenedor.querySelector('img'),
-            tgt = e.target;
-
-        if(tgt==atras){
-            if(cont > 0){
-                img.src=imagenes[cont-1];
-                cont--;
-            } else {
-                img.src = imagenes[imagenes.length - 1];
-                cont = imagenes.length - 1;
-            } 
-
-        } else if (tgt==adelante){
-            if(cont < imagenes.length -1 ){
-                img.src=imagenes[cont+1];
-                cont++;
-            } else {
-                img.src = imagenes[0];
-                cont = 0;
-            } 
-        }
-    });
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-    let contenedor = document.querySelector('.contenedor');
-    carrousel(contenedor);
-});
-
+// audio
 const audio = document.getElementById("audio");
 audio.addEventListener("ended", function(){
     audio.play();
 });
+
+// countdown timer
+
+const days = document.getElementById("days");
+const hours = document.getElementById("hours");
+const minutes = document.getElementById("minutes");
+const seconds = document.getElementById("seconds");
+
+
+const currentYear = new Date().getFullYear();
+const newYearTime = new Date(`December 20 ${currentYear} 00:00:00`);
+
+function updateCountdowntime(){
+    const currentTime = new Date();
+    const diff = newYearTime  - currentTime;
+    
+    
+    const d = Math.floor(diff/1000/60/60/24);
+    const h = Math.floor(diff/1000/60/60)%24;
+    const m = Math.floor(diff/1000/60)%60;
+    const s = Math.floor(diff/1000)%60;
+
+    days.innerHTML = d;
+    hours.innerHTML = h < 10 ? '0' + h : h;
+    minutes.innerHTML = m < 10 ? '0' + m : m;
+    seconds.innerHTML = s < 10 ? '0' + s : s;
+}
+
+setInterval(updateCountdowntime, 1000);
+
