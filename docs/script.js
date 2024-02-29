@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (username === "admin" && password === "doris") {
             alert("Login exitoso"); // Cambia esto por la acción que quieras realizar después del login exitoso
             //form.reset(); // Reinicia el formulario
-            window.location.href = "story.html";
+            window.location.href = "menu.html";
         } else {
             alert("Usuario o contraseña incorrectos");
         }
